@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+build/
+dist/
+temp/
+tmp/
+login.txt
+package-lock.json
+tags

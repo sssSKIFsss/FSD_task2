@@ -1,0 +1,44 @@
+@import "./utils/reset";
+@import "./utils/libs";
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/fonts";
+@import "./modules/wrapper";
+
+html {
+  color: $mainFontColor;
+  font-size: $mainFontSize;
+  height: 100%;
+  line-height: $mainLineHeight;
+
+  h2 {
+    color: $light-color;
+    font-family: $mainFont;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  .container {
+    display: non;
+    margin: 100px;
+    padding: 100px;
+  }
+
+  .content-wrapper {
+    margin: 100px;
+    padding: 100px;
+  }
+
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
