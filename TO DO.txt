@@ -1,0 +1,5 @@
+- починить style-lint
+- починить webserver при режиме dev
+
+- обновить webpack до 5 версии
+- переписать в webpack/style.js блок optimization с {...}

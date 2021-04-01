@@ -5,10 +5,14 @@ const s = require("../webpack.settings");
 module.exports = function () {
   return {
     plugins: [
-      new CopyPlugin([{
-        from: path.resolve(s.dir, s.src, s.srcHtaccess),
-        to: ""
-      }])
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(s.dir, s.src, s.srcHtaccess),
+            to: path.resolve(s.dir, s.dist)
+          }
+        ]
+      })
     ]
   };
 };

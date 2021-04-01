@@ -18,9 +18,9 @@ const cssLoaders = (isDev, isSCSS) => {
     }, {
       loader: "css-loader",
       options: {
-        sourceMap: true,
         modules: true,
-        importLoaders: isSCSS ? 2 : 1
+        importLoaders: isSCSS ? 2 : 1,
+        sourceMap: true
       }
     }, {
       loader: "resolve-url-loader",

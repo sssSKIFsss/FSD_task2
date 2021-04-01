@@ -8,9 +8,10 @@ module.exports = function () {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         include: path.resolve(s.dir, s.src, s.srcFonts),
         use: [{
-          loader: "file-loader",
+          // loader: "file-loader",
+          type: "asset/resource",
           options: {
-            name: "[name].[ext]?[hash]",
+            name: "[name].[ext]?[contenthash]",
             outputPath: s.distFonts,
             useRelativePath: true
           }

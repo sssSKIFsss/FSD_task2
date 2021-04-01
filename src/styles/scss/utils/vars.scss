@@ -1,34 +1,36 @@
-/* Font */
-$mainFont : oswald, helvetica, arial, sans-serif;
+/* ------------------------- FONT ------------------------- */
+// $main-font : montserrat, helvetica, arial, sans-serif;
+$main-font : montserrat, sans-serif;
 
-/* Size */
-//$mainFontColor : #852;
-$mainFontColor : #852;
-$mainFontSize: 16px;
-$mainFontWeight: 400;
-$mainLineHeight: 1.4;
+/* ------------------------ SIZE -------------------------- */
+// font size
+$h2-font-size:       24px;
+$h3-font-size:       19px;
+$h4-font-size:       12px;
+$header-font-weight: 700;
+$header-line-height: normal;
+$text-font-size:     14px;
+$text-font-weight:   400;
+$text-line-height:   1.4;
 
+// screen width
 $desktopWidth: 1280px;
 $smDesktopWidth: 980px;
 $tableWidth: 980px;
 $phoneWidth: 480px;
 $smPhoneWidth: 320px;
 
-/* Main color */
-$default-color: #f33ddf;
-$primary-color: #40d0d8;
-$success-color: #3aaaaa;
-$danger-color: #933999;
-$warning-color: #885858;
-$light-color: #477777;
-$purple-color: #166666;
+/* ------------------------- COLOR -------------------------- */
+// main color
+$main-color:    #bc9cff;
+$service-color: #40d0d8;
+$dark:          #1f2041;
 
-/* Neutral Color */
-$neutral-primary: #333;
-$neutral-regular: #555;
-$neutral-secondary: #888;
-$neutral-placeholder: #aaa;
+// border color
+$border-color: $dark;
 
-/* Border Color */
-$border-base: #d36;
-$border-light: #661;
+// font color
+$font-color: $dark;
+
+// shade color
+$shade-color: $dark;

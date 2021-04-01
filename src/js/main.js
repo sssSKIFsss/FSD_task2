@@ -5,7 +5,7 @@
 // service.log();
 
 // Извлечение отдельного модуля:
-// import {config} from "./modules/config";
+// import config from "./modules/config";
 // console.log("Config key:", config.key);
 
 // Подключение библиотеки
@@ -17,7 +17,6 @@
 //import Bootstrap from "bootstrap/dist/js/bootstrap.min/js"
 //import "bootstrap/dist/js/bootstrap.min/js"
 
-import "@styles/css/index.css";
 import "@styles/scss/index.scss";
 import "@pug/index.pug";
 

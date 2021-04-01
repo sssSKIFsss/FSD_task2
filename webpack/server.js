@@ -1,4 +1,6 @@
 const path = require("path");
+const webpack = require("webpack");
+
 const s = require("../webpack.settings");
 const SERV = {
   poll: () => false,
@@ -30,8 +32,15 @@ module.exports = () => {
       writeToDisk: false,
       inline: true,
       hot: true,
+      compress: true,
       open: true
     },
-    watchOptions: { aggregateTimeout: 150 }
+    watchOptions: { aggregateTimeout: 150 },
+    plugins: [
+      // для использования HotReload подключаем плагин здесь,
+      // опцию hot = true в настройках сервера и
+      // соответсвующий код в исходниках
+      new webpack.HotModuleReplacementPlugin()
+    ]
   };
 };

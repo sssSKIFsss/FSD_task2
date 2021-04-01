@@ -19,7 +19,7 @@ async function getTemplate(message) {
 
 document.getElementById("importButton").onclick = function () {
   // noinspection JSIgnoredPromiseFromCall
-  getTemplate(" из dynamic_import => dynamic_block");
+  getTemplate(" из dynamic_import => dynamic_block!");
 };
 
 

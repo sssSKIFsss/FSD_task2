@@ -1,6 +1,6 @@
 # FSD - задание2 - Практика верстки
 
-# Github Pages - 
+# Github Pages - https://sssskifsss.github.io/FSD_task2/ 
 
 ## Особенности
 * именование классов по [БЭМ](https://ru.bem.info/)

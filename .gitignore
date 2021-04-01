@@ -6,4 +6,6 @@ temp/
 tmp/
 login.txt
 package-lock.json
+stat.json
+tags.*
 tags

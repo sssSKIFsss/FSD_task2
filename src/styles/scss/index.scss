@@ -1,44 +1,62 @@
-@import "./utils/reset";
-@import "./utils/libs";
+//@import "./utils/reset";
+//@import "./utils/libs";
 @import "./utils/vars";
 @import "./utils/mixins";
 @import "./utils/fonts";
-@import "./modules/wrapper";
+// @import "./modules/wrapper";
 
-html {
-  color: $mainFontColor;
-  font-size: $mainFontSize;
+body {
+  font-family: serif;
+  font-family: $main-font;
+  // color: $font-color;
+  font-weight: $text-font-weight;
+  font-size: $text-font-size;
+  line-height: $text-line-height;
   height: 100%;
-  line-height: $mainLineHeight;
+}
 
-  h2 {
-    color: $light-color;
-    font-family: $mainFont;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px;
-  }
+h2, h3, h4 {
+  //  color: $font-color;
+  font-weight: $header-font-weight;
+  line-height: $header-line-height;
+}
 
-  .container {
-    display: non;
-    margin: 100px;
-    padding: 100px;
-  }
+h2 {
+  font-size: $h2-font-size;
+}
 
-  .content-wrapper {
-    margin: 100px;
-    padding: 100px;
-  }
+h3 {
+  font-size: $h3-font-size;
+}
 
-  @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
-  }
+h4 {
+  font-size: $h4-font-size;
+}
 
-  @media screen and (max-width: $tableWidth) {
-    font-size: 15px;
-  }
+.container {
+  display: none;
+  margin: 100px;
+  padding: 100px;
+}
 
-  @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
+.content-wrapper {
+  margin: 100px;
+  padding: 100px;
+}
+
+@media screen and (max-width: $desktopWidth) {
+  font-size: 16px;
+}
+
+@media screen and (max-width: $tableWidth) {
+  font-size: 15px;
+}
+
+@media screen and (max-width: $phoneWidth) {
+  font-size: 14px;
+}
+
+.item__title {
+  color: $main-color;
+  line-height: 1.6;
 }

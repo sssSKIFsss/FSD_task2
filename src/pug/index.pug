@@ -2,12 +2,14 @@ extends ./layouts/main.pug
 
 block variables
   - var pageClass = "index-page";
-  - var title = "Webpack + Pug";
+  - var title = "FSD/TOXIN";
 
 block content
   section
     .container
-      +item("Hello Itemx", "This is first view on Items")
+      .item__title= "Привет, мир"
+      p.item__subtitle= "Эта строка должна быть на русском"
+      //- +item("Привет, мир!", "Это строка должна быть на русском.")
       img(src=require("@images/img2.jpg").default width="100" alt="men")
   section
     .container
@@ -19,8 +21,8 @@ block content
       img(src=require("@images/img2.jpg").default width="100" alt="men")
   button(id="requireButton") dynamic-require test!
   button(id="importButton") dynamic-import test!
+
   //script
   //  app.welcome("something about index.pug?")
-
   //block scripts
   //  script(src=htmlWebpackPlugin.files.js[2])

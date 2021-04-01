@@ -3,7 +3,6 @@
 const merge = require("webpack-merge");
 const path = require("path");
 const webpack = require("webpack");
-const StylelintPlugin = require("stylelint-webpack-plugin");
 
 const configureCopy = require("./webpack/copy");
 const configureFont = require("./webpack/font");
@@ -36,11 +35,12 @@ module.exports = (env) => {
     },
 
     isDev ? {
-      devtool: "cheap-module-eval-source-map",
-      mode: "development"
+      mode: "development",
+      devtool: "inline-source-map"
+      // devtool: "cheap-module-eval-source-map"
     } : {
-      devtool: "source-map",
-      mode: "production"
+      mode: "production",
+      devtool: "source-map"
     }, {
 
       resolve: {
@@ -57,40 +57,29 @@ module.exports = (env) => {
 
       optimization: {
         splitChunks: {
-          chunks: "async",
+          chunks: "all",
           minSize: 30000,
           maxSize: 0,
           minChunks: 1,
           maxAsyncRequests: 6,
           maxInitialRequests: 4,
           automaticNameDelimiter: "~",
-
-          // cacheGroups: {
-          //   defaultVendors: {
-          //     // name: "vend0rs",
-          //     test: /[\\/]node_modules[\\/]/,
-          //     priority: -10
-          //   },
-          //   default: {
-          //     minChunks: 2,
-          //     priority: -20,
-          //     reuseExistingChunk: true
-          //   }
-          // }
+          // default: {
+          //   minChunks: 2,
+          //   priority: -20,
+          //   reuseExistingChunk: true
+          // },
           cacheGroups: {
-            vendors: {
+            defaultVendors: {
               name: "vendors",
               test: /node_modules/,
               // или можно более конкретно
               // test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-              chunks: "all",
               enforce: true
             },
             common: {
-              name: "common",
-              chunks: "initial",
-              minChunks: 2,
-              minSize: 0
+              name: "common"
+              // chunks: "initial",
             }
           }
         },
@@ -106,31 +95,17 @@ module.exports = (env) => {
       },
 
       plugins: [
+        // корректно строим карту при SCSS-файлах
+        new webpack.SourceMapDevToolPlugin({
+          filename: "[file].map"
+        }),
         // для доступа к обозначенной переменной
         // в коде проекта вне Webpack
         new webpack.DefinePlugin({
           ENV: JSON.stringify(isDev ?
             "development" : "production")
-        }),
-
-        new StylelintPlugin({
-          configFile: "./.stylelintrc.js",
-          context: "./"
         })
-
-      ].concat(isDev ? [
-        // для использования HotReload подключаем плагин здесь,
-        // опцию hot = true в настройках сервера и соответсвующий
-        // код в исходниках
-        new webpack.HotModuleReplacementPlugin()
-
-      ] : [
-        // new webpack.SourceMapDevToolPlugin({
-        //   filename: "[file].map",
-        //   append: "\n//# sourceMappingURL = " +
-        //     path.resolve(P.dir, P.dist, P.distJS, "[url]")
-        // })
-      ])
+      ]
     },
     configureCopy(),
     configureFont(),

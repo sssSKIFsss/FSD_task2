@@ -3,7 +3,7 @@
 const path = require("path");
 const s = require("../webpack.settings");
 
-module.exports = (devMode) => {
+module.exports = (isDev) => {
   return {
     module: {
       rules: [{
@@ -16,15 +16,18 @@ module.exports = (devMode) => {
           path.resolve(s.dir, s.src, s.srcImg, s.srcFavicon)
         ],
         use: [{
-          loader: "url-loader",
+
+          // loader: "url-loader",
+          type: "asset/resource",
+
           options: {
-            name: "[name].[ext]?[hash]",
+            name: "[name].[ext]?[contenthash]",
             // outputPath: PATHS.dist_img,
             outputPath: path.join(s.distImg),
             useRelativePath: true,
             limit: 1024
           }
-        }].concat(devMode ? [] : [{
+        }].concat(isDev ? [] : [{
           loader: "image-webpack-loader",
           options: {
             mozjpeg: {

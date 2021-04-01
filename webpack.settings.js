@@ -22,9 +22,9 @@ module.exports = {
   templates: "templates",
 
   fileName:
-    (isDev) => isDev ? "[name]." : "[name].[hash].",
+    (isDev) => isDev ? "[name]." : "[name].[contenthash].",
   chunkFileName:
-    (isDev) => isDev ? "[id]." : "[id].[hash].",
+    (isDev) => isDev ? "[id]." : "[id].[contenthash].",
 
   entries: {
     app: "./js/main.js",

@@ -1,23 +1,25 @@
 @font-face {
-  font-family: "Oswald";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   src:
-    local("Oswald Bold"),
-    local("Oswald-Bold"),
-    url("../../../fonts/oswald/oswald-bold.woff2") format("woff2"),
-    url("../../../fonts/oswald/oswald-bold.woff") format("woff"),
-    url("../../../fonts/oswald/oswald-bold.ttf") format("truetype");
+    local("montserrat bold"),
+    local("montserrat-bold"),
+    url("../../../fonts/montserrat/montserrat-bold.woff2") format("woff2"), /* suret modern browsers */
+    url("../../../fonts/montserrat/montserrat-bold.woff") format("woff"), /* pretty modern browsers */
+    url("../../../fonts/montserrat/montserrat-bold.ttf") format("truetype"), /* safari, android, iOS */
+    url("../../../fonts/montserrat/montserrat-bold.svg#montserrat") forman("svg"); /* legacy iOS */
 }
 
 @font-face {
-  font-family: "Oswald";
+  font-family: "montserrat";
   font-style: normal;
   font-weight: 400;
   src:
-    local("Oswald Regular"),
-    local("Oswald-Regulag"),
-    url("../../../fonts/oswald/oswald-regular.woff2") format("woff2"),
-    url("../../../fonts/oswald/oswald-regular.woff") format("woff"),
-    url("../../../fonts/oswald/oswald-regular.ttf") format("truetype");
+    local("montserrat regular"),
+    local("montserrat-regular"),
+    url("../../../fonts/montserrat/montserrat-regular.woff2") format("woff2"),
+    url("../../../fonts/montserrat/montserrat-regular.woff") format("woff"),
+    url("../../../fonts/montserrat/montserrat-regular.ttf") format("truetype"),
+    url("../../../fonts/montserrat/montserrat-regular.svg#montserrat") forman("svg");
 }
