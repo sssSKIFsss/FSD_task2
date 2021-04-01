@@ -17,6 +17,7 @@ module.exports = function () {
         ],
         use: [
           {
+            //TODO: html-loader, apply-loader, pug-loader
             loader: "pug-loader",
             options: {
               pretty: true
